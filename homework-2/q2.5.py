@@ -63,7 +63,7 @@ class DecisionTree:
     def print_tree(self, node,features=None,classes=None, space=""):
         if isinstance(node, int) or isinstance(node,float):
             classname = classes[node] if classes else node
-            print(space + "Predict", classes)
+            print(space + "Predict", classname)
             return
         if features is None:
             feature = f"Feature {node[0]}"
