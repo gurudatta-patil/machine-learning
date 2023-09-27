@@ -1,11 +1,11 @@
 #q4
-#for 17 points in lagrange
+#for 16 points in lagrange
 import numpy as np
 from scipy.interpolate import lagrange
 from sklearn.metrics import mean_squared_error
 from numpy.polynomial.polynomial import Polynomial
 
-a, b, n = 0, 2*np.pi, 17
+a, b, n = 0, 2*np.pi, 16
 
 x_train = np.random.uniform(a, b, n)
 y_train = np.sin(x_train)
