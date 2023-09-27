@@ -24,7 +24,7 @@ print(f'Training error: {train_error}')
 print(f'Testing error: {test_error}')
 
 
-for std_dev in [0.1, 0.5, 1.0]:
+for std_dev in [0.1,0.3, 0.5,0.6, 1.0]:
     xn_train = x_train + np.random.normal(0, std_dev, n)
     yn_train = np.sin(xn_train)
 
@@ -66,7 +66,7 @@ for std_dev in [0.1, 0.5, 1.0]:
 # print(f'Testing error: {test_error}')
 
 
-# for std_dev in [0.1, 0.5, 1.0]:
+# for std_dev in [0.1,0.3, 0.5,0.6, 1.0]:
 #     xn_train = x_train + np.random.normal(0, std_dev, n)
 #     yn_train = np.sin(xn_train)
 
