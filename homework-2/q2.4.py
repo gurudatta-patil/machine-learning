@@ -5,8 +5,9 @@ from collections import Counter
 
 data = np.loadtxt("D3Leaves.txt")
 
-X = data[:, :-1]
-y = data[:, -1]   
+# Extract features and labels
+X = data[:, :-1]  # Features
+y = data[:, -1]   # Labels
 
 class DecisionTree:
     def fit(self, X, y):

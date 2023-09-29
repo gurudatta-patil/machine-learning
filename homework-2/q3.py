@@ -9,7 +9,6 @@ data = np.loadtxt("Dbig.txt")
 np.random.seed(7)
 np.random.shuffle(data)
 
-
 n_nodes = []
 t_errors = [] 
 

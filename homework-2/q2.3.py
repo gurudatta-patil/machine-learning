@@ -36,5 +36,5 @@ for feature_i in range(X.shape[1]):
 
         print(f"Cut: Feature {feature_i}, Threshold {threshold}")
         print(f"Information Gain: {Infogain}")
-        print(f"Information Gain Ratio: {Info_gain_ratio}")
+        print(f"Information Gain Ratio: {Ig_ratio}")
         print("\n")

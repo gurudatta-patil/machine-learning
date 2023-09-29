@@ -66,4 +66,5 @@ tree.fit(xtrain, ytrain)
 
 X_test = np.array([[4, 3], [1, 2]])
 predictions = tree.predict(X_test)
+print("Array of prediction is")
 print(predictions)

@@ -26,7 +26,6 @@ plt.ylabel("Feature 2")
 plt.legend()
 plt.show()
 
-
 #The decision tree is complex for D2 than D1 because there is a easy split that can happen in D1 because of the
 #straight line with slope=0, which can easily represent something above Feature is class 0 and otherwise class 1.
 #But if we look at D2 the line has some slope, at every Feature 2 there is a different Feature 1, causing the 
