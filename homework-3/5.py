@@ -34,7 +34,7 @@ y = df.iloc[:, -1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 Y_prob = knn_prob(X_train, y_train, X_test)
 fpr_knn, tpr_knn, _ = roc_curve(y_test, Y_prob)
-roc_auc_knn = auc(fpr_knn, tpr_knn)
+auc_knn = auc(fpr_knn, tpr_knn)
 
 def sigmoid(x):
     sig=1 / (1 + np.exp(-x))
@@ -59,13 +59,13 @@ iterations = 1000
 theta= gradient_descent(X_train, y, theta, learning_rate, iterations)
 y_prob = X_test @ theta
 fpr_log, tpr_log, _ = roc_curve(y_test, y_prob)
-roc_auc_log = auc(fpr_log, tpr_log)
+auc_log = auc(fpr_log, tpr_log)
 plt.figure()
 plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
 plt.title('ROC Curves')
-plt.plot(fpr_knn, tpr_knn, label='kNN (area = %0.2f)' % roc_auc_knn)
-plt.plot(fpr_log, tpr_log, label='Logistic Regression (area = %0.2f)' % roc_auc_log)
+plt.plot(fpr_knn, tpr_knn, label='kNN (area = %0.2f)' % auc_knn)
+plt.plot(fpr_log, tpr_log, label='Logistic Regression (area = %0.2f)' % auc_log)
 plt.xlim([0.0, 1.0])
 plt.ylim([0.0, 1.05])
 plt.plot([0, 1], [0, 1], 'k--')

@@ -40,7 +40,6 @@ for k in [1,3,5,7,10]:
         Y_pred = knn_pred(X_train, Y_train, X_test,k)
         accuracy_temp = accuracy_score(Y_test, Y_pred)
         accuracy.append(accuracy_temp)
-        precision = precision_score(Y_test, Y_pred)
         fold += 1
     accuracy_final.append(mean(accuracy))
     print(f"accuracy={mean(accuracy)}")
