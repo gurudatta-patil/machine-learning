@@ -7,7 +7,7 @@ from statistics import mean
 
 def euclidean_distance(x1, x2):
     return np.sqrt(np.sum((x1 - x2) ** 2))
-
+#as it is a brute force approoach to predicition, it will take a while to run
 def knn_pred(X_train, Y_train, X_test, k=1):
     y_pred = []
     for i in range(0,1000):

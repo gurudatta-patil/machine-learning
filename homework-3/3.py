@@ -1,7 +1,6 @@
 #3
 import numpy as np
 import pandas as pd
-import sklearn
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 import matplotlib.pyplot as plt
@@ -17,6 +16,7 @@ def sigmoid(x):
 def gradient_descent(X, y, theta, learning_rate, iterations):
     m = len(y)
     for i in range(iterations):
+        # the X here is samples * features and theta is features*1
         theta -= learning_rate*(((sigmoid(theta.transpose()@X.transpose())-y.transpose())@X).transpose())
     return theta
 
