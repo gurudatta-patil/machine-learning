@@ -35,7 +35,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 Y_prob = knn_prob(X_train, y_train, X_test)
 fpr_knn, tpr_knn, _ = roc_curve(y_test, Y_prob)
 auc_knn = auc(fpr_knn, tpr_knn)
-
+#logistic regressionS
 def sigmoid(x):
     sig=1 / (1 + np.exp(-x))
     return sig

@@ -5,7 +5,7 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from statistics import mean
 
-def euclidean_distance(x1, x2):
+def euclidean_dist(x1, x2):
     return np.sqrt(np.sum((x1 - x2) ** 2))
 #as it is a brute force approoach to predicition, it will take a while to run
 def knn_pred(X_train, Y_train, X_test, k=1):
