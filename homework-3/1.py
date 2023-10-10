@@ -23,13 +23,16 @@ def nearest_neighbor(x, X, y):
 
 x_min, x_max = -2, 2 
 y_min, y_max = -2, 2 
-h = 0.1 
-x_mesh, y_mesh = np.meshgrid(np.arange(x_min, x_max + h, h), np.arange(y_min, y_max + h, h))
-Z = np.array([predict(x, X, y) for x in np.c_[x_mesh.ravel(), y_mesh.ravel()]])
-Z = Z.reshape(x_mesh.shape)
-plt.pcolormesh(x_mesh, y_mesh, Z, cmap="Pastel1")
-plt.scatter(X[y == 0, 0], X[y == 0, 1], c="b", marker="o", label="Class 0")
-plt.scatter(X[y == 1, 0], X[y == 1, 1], c="r", marker="^", label="Class 1")
+h = 0.1
+x_range=np.arange(x_min, x_max + h, h)
+y_range=np.arange(y_min, y_max + h, h)
+x_test=np.array([x for x in x_range])
+y_test=np.array([y for y in y_range])
+test_points=np.array([(x,y) for x in x_range for y in y_range])
+Z = np.array([predict(x, X, y) for x in test_points])
+plt.scatter(test_points[:, 0], test_points[:, 1], c=Z, marker='x', label='Test Points')
+plt.scatter(X[y == 0, 0], X[y == 0, 1], c="r", marker="o", label="Class 0")
+plt.scatter(X[y == 1, 0], X[y == 1, 1], c="b", marker="^", label="Class 1")
 plt.xlabel("Feature 1")
 plt.ylabel("Feature 2")
 plt.legend(loc="upper left")
